@@ -1,0 +1,15 @@
+<div class= "navbar-header">
+  <div><h1>Wikinimous</h1></div>
+
+  <div class= "navbar-toggle" ><%= link_to "Add a article", new_article_path %></div>
+</div>
+
+<div class="col-sm-12 text-left">
+  <% @articles.each do |article| %>
+    <li class="article-list">
+      <%= link_to article.title, article_path(article) %> <%= link_to "Delete", article_path(article), method: :delete, data: { confirm: "Are you sure?" } %>
+
+    </li>
+    <%= article.content%>
+  <% end %>
+</div>
